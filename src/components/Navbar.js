@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <nav className="bg-white border-gray-200">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a className="flex items-centerh-8">
+        <a className="flex items-center h-8">
           <TbHomeStar className="text-5xl" />
         </a>
         <div className="text-center">

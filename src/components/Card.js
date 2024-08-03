@@ -1,6 +1,6 @@
 function Card() {
   return (
-    <div className="w-[300px] h-[420px] bg-white  rounded-lg shadow mt-12 ml-7 border-2 border-black group perspective">
+    <div className="w-[300px] h-[420px] bg-white rounded-lg shadow border-2 border-black group perspective">
       <div className="relative w-full h-full duration-1000 preserve-3d group-hover:my-rotate-y-180 ">
         <div className="absolute w-full h-full text-center backface-hidden">
           <img className="rounded-lg" src="/cake.png" alt="cake-img" />

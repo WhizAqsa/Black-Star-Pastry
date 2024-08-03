@@ -19,6 +19,24 @@ const Myclass = plugin(function ({ addUtilities }) {
     ".custom-rows": {
       gridTemplateRows: "139px 139px 139px",
     },
+    ".li-style": {
+      overflow: "hidden",
+      position: "absolute",
+      top: "0px",
+      right: "0px",
+      width: "50%",
+      height: "50%",
+      transformOrigin: "0% 100%",
+    },
+    ".text-style": {
+      position: "absolute",
+      textAlign: "center",
+      paddingTop: "20px",
+      display: "block",
+      transform: "skewY(60deg) rotate(15deg)",
+      fontWeight: "bold",
+      fontSize: "16px",
+    },
   });
 });
 module.exports = {

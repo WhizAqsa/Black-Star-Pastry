@@ -1,11 +1,13 @@
 import Navbar from "./components/Navbar";
-
-import Card from "./components/Card";
+//import Navigation from "./components/Navigation";
+//import Card from "./components/Card";
+import CircularCardLayout from "./components/CircularCardLayout";
+//import HomeMenu from "./components/HomeMenu";
 function App() {
   return (
     <>
       <Navbar />
-      <Card />
+      <CircularCardLayout />
     </>
   );
 }
