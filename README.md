@@ -31,3 +31,20 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ### Deployment
 
 React.js can be easily deployed.See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+galat file copy ki thi yar
+knsi file?
+package.json  
+i didn't copy u just said k delete the pc...lock folder and node....
+thenn copy paste code in other drive
+then run npm install.
+yar aap agar react code copy kr rahi hain, aor pc.json file nahi hogi
+to run kaisy hogi?
+dependencies kaisy install hongi?
+
+mainy pckg.json find del hi ni ki thi
+or pckk.lock wali k lye npm init -y kya tha
+mjhy lga tha npm install krny se node_modules wala folder un dependencies ko ly kar aega.
+
+is npm walay stuff ko search karein, and learn it from youtube k how it works
+thwwk ha

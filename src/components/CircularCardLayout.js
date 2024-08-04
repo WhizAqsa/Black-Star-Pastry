@@ -1,25 +1,8 @@
 import Card from "./Card";
-import Navigation from "./Navigation";
 import { useState, useRef } from "react";
+import { FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa6";
+
 function CircularCardLayout() {
-  // some points to note.
-  // if you have lesser number of required cards, make sure the number of cards is divisible by 6
-  // keep these configurations, i.e. number of cards as 36 and remaining stuff
-  // but you will ask what if I have only 5 cards?
-  // well don't ask, cuz i am gonna answer right away... repeat the cards to maech this criteria
-  // HEHEHEHEH:D
-  // enjoy HEHEHUHUAO ba byeeeee
-  //u there?sunainoeu aoeu aoeu aoeu aoeu
-  //mjhy ye code smjha dein
-  //i hav so many Qs
-  // mai type to nahi kr skita
-  //call k
-  //done
-  //and thank you kesy krun? kis lye// mery lye time nikaal k mery help krny k lye, for these things, no need...phr bhi
-  // is k baad "phir bi" hota...kifya kya?....
-  // Love you
-  //love you more...
-  // byeeeeee, enjoy acha jaein byeeee 😘😍😘😘😘😘😘😘 much happy!!!!!!!!!!!!
   const size = 5000;
   const cardCount = 36;
   const cardWidth = 300;
@@ -73,9 +56,6 @@ function CircularCardLayout() {
       );
     }
   };
-  // We have to place the cards in exact center of the paret
-  // mujy apna cursor nahi dik raha tha, wapis kr lena ap theme
-  // space ka kuch kr len...yar mainy pura aik folder del kr dya ha ab or kia krun
   return (
     <>
       <div
@@ -108,6 +88,22 @@ function CircularCardLayout() {
         </div>
       </div>
     </>
+  );
+}
+
+function CardsScrollNavigation({ onRotate }) {
+  return (
+    <div className="flex flex-row">
+      <button onClick={() => onRotate("right")}>
+        <FaChevronLeft className="text-3xl" />
+      </button>
+      <a>
+        <FaStar className="text-3xl" />
+      </a>
+      <button onClick={() => onRotate("left")}>
+        <FaChevronRight className="text-3xl" />
+      </button>
+    </div>
   );
 }
 

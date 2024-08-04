@@ -1,15 +1,13 @@
 import Navbar from "./components/Navbar";
-//import Navigation from "./components/Navigation";
-//import Card from "./components/Card";
-import CircularCardLayout from "./components/CircularCardLayout";
-import CakeMenu from "./components/CakeMenu";
-import Shop from "./components/Shop";
-//import HomeMenu from "./components/HomeMenu";
+import Home from "./pages/Home";
 function App() {
   return (
     <>
-      <Shop />
+      <Home />
     </>
   );
 }
 export default App;
+// you have to implement router system over here
+// which then will render each page, (for which i created the pages directory) on its own url, i.e. home page on /home etc...
+//yes, thank you... pleasure bye
