@@ -1,4 +1,4 @@
-import Cake from "./Cake";
+import DisplayCake from "./DisplayCake";
 
 function CakeMenu() {
   const cakeData = [
@@ -8,6 +8,7 @@ function CakeMenu() {
       title: "Black Truffle Crepe Cake",
       description:
         "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+      price: "$80.00",
     },
     {
       id: 2,
@@ -15,6 +16,7 @@ function CakeMenu() {
       title: "Black Truffle Crepe Cake",
       description:
         "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+      price: "$90.00",
     },
     {
       id: 3,
@@ -22,6 +24,7 @@ function CakeMenu() {
       title: "Black Truffle Crepe Cake",
       description:
         "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+      price: "$100.00",
     },
     {
       id: 4,
@@ -29,6 +32,7 @@ function CakeMenu() {
       title: "Black Truffle Crepe Cake",
       description:
         "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+      price: "$150.00",
     },
   ];
 
@@ -72,7 +76,7 @@ function CakeMenu() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {cakeData.map((cake) => (
-            <Cake key={cake.id} {...cake} />
+            <DisplayCake key={cake.id} {...cake} />
           ))}
         </div>
       </div>

@@ -1,9 +1,10 @@
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Cakes from "./pages/Cakes";
 function App() {
   return (
     <>
-      <Home />
+      <Cakes />
     </>
   );
 }
