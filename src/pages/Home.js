@@ -6,7 +6,7 @@ function Home() {
   return (
     <>
       <Navbar />
-      <Banner />
+      <Banner title="Welcome" />
       <Category />
     </>
   );
