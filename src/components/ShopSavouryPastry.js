@@ -1,7 +1,7 @@
-import CakePriceCard from "./CakePriceCard";
+import SavouryPastryPriceCard from "./SavouryPastryPriceCard";
 
-const ShopCake = () => {
-  const cakeData = [
+const ShopSavouryPastry = () => {
+  const savouryPastryData = [
     {
       id: 1,
       image: "./chocoCake.png",
@@ -35,17 +35,18 @@ const ShopCake = () => {
       price: "$150.00",
     },
   ];
+
   return (
     <div className="container mx-auto relative max-w mb-10">
       <div className="grid grid-cols-2 gap-2">
         <div className="flex flex-col shadow-md border-r-2 w-[400px] h-full ml-4 p-10">
-          <a href="/cakes" className="font-bold tracking-tighter mb-2">
+          <a href="/cakes" className="tracking-tighter mb-2">
             Cakes
           </a>
           <a href="/sweetpastry" className="tracking-tighter mb-2">
             Sweet Pastry
           </a>
-          <a href="/savourypastry" className="tracking-tighter mb-2">
+          <a href="/savourypastry" className="font-bold tracking-tighter mb-2">
             Savoury Pastry
           </a>
           <a href="/addons" className="tracking-tighter">
@@ -53,8 +54,8 @@ const ShopCake = () => {
           </a>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 absolute right-0">
-          {cakeData.map((cake) => (
-            <CakePriceCard key={cake.id} {...cake} />
+          {savouryPastryData.map((savouryPastry) => (
+            <SavouryPastryPriceCard key={savouryPastry.id} {...savouryPastry} />
           ))}
         </div>
       </div>
@@ -62,4 +63,4 @@ const ShopCake = () => {
   );
 };
 
-export default ShopCake;
+export default ShopSavouryPastry;

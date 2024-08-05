@@ -1,9 +1,9 @@
-import DisplayCake from "./DisplayCake";
+import DisplayTieredCakes from "./DisplayTieredCakes";
 import Navbar from "./Navbar";
 
 import { useNavigate } from "react-router-dom";
-function CakeMenu() {
-  const cakeData = [
+function TieredCakesMenu() {
+  const tieredCakesData = [
     {
       id: 1,
       image: "./chocoCake.png",
@@ -48,7 +48,7 @@ function CakeMenu() {
       <div className="container mx-auto mt-7">
         <ul className="flex flex-row items-center justify-center gap-11  text-gray-900">
           <li>
-            <a href="/displaycakes" className="me-4 md:me-6">
+            <a href="/displaycakes" className="me-4 underline md:me-6">
               CAKES
             </a>
           </li>
@@ -58,7 +58,7 @@ function CakeMenu() {
             </a>
           </li>
           <li>
-            <a href="/tieredcakes" className="me-4 underline md:me-6">
+            <a href="/tieredcakes" className="me-4 md:me-6">
               TIERED CAKES
             </a>
           </li>
@@ -70,10 +70,9 @@ function CakeMenu() {
         </ul>
         <div className="flex items-center justify-center mt-10">
           <p className="text-center whitespace-pre-wrap">
-            Original cakes with poetic storytelling woven through each slice.
-            Authentic creations that awaken the senses and evoke
-            <br /> moments of edible emotion. Gluten Free (GF), Vegetarian (V)
-            and Vegan (VG) options available.
+            Iconic centerpieces for any occasion. All of our famous flavours are
+            available in two, three and four-layer sizes that serve
+            <br /> up to 160 guests.
           </p>
         </div>
         <div className="flex justify-end">
@@ -85,12 +84,12 @@ function CakeMenu() {
           </button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {cakeData.map((cake) => (
-            <DisplayCake key={cake.id} {...cake} />
+          {tieredCakesData.map((tieredCake) => (
+            <DisplayTieredCakes key={tieredCake.id} {...tieredCake} />
           ))}
         </div>
       </div>
     </>
   );
 }
-export default CakeMenu;
+export default TieredCakesMenu;

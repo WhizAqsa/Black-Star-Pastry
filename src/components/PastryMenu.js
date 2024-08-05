@@ -1,9 +1,9 @@
-import DisplayCake from "./DisplayCake";
+import DisplayPastry from "./DisplayCake";
 import Navbar from "./Navbar";
 
 import { useNavigate } from "react-router-dom";
-function CakeMenu() {
-  const cakeData = [
+function PastryMenu() {
+  const pastryData = [
     {
       id: 1,
       image: "./chocoCake.png",
@@ -48,12 +48,12 @@ function CakeMenu() {
       <div className="container mx-auto mt-7">
         <ul className="flex flex-row items-center justify-center gap-11  text-gray-900">
           <li>
-            <a href="/displaycakes" className="me-4 md:me-6">
+            <a href="/cakes" className="me-4 underline md:me-6">
               CAKES
             </a>
           </li>
           <li>
-            <a href="/pastry" className="me-4 underline md:me-6">
+            <a href="/pastry" className="me-4 md:me-6">
               PASTRY
             </a>
           </li>
@@ -70,10 +70,10 @@ function CakeMenu() {
         </ul>
         <div className="flex items-center justify-center mt-10">
           <p className="text-center whitespace-pre-wrap">
-            Original cakes with poetic storytelling woven through each slice.
-            Authentic creations that awaken the senses and evoke
-            <br /> moments of edible emotion. Gluten Free (GF), Vegetarian (V)
-            and Vegan (VG) options available.
+            Our pastries pay respect to classic recipes but explore
+            cross-cultural culinary possibilities. Created with an adventurous
+            <br />
+            spirit and always a twist.
           </p>
         </div>
         <div className="flex justify-end">
@@ -85,12 +85,12 @@ function CakeMenu() {
           </button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {cakeData.map((cake) => (
-            <DisplayCake key={cake.id} {...cake} />
+          {pastryData.map((pastry) => (
+            <DisplayPastry key={pastry.id} {...pastry} />
           ))}
         </div>
       </div>
     </>
   );
 }
-export default CakeMenu;
+export default PastryMenu;

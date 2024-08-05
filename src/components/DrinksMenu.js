@@ -1,9 +1,9 @@
-import DisplayCake from "./DisplayCake";
+import DisplayDrinks from "./DisplayDrinks";
 import Navbar from "./Navbar";
 
 import { useNavigate } from "react-router-dom";
-function CakeMenu() {
-  const cakeData = [
+function DrinksMenu() {
+  const drinksData = [
     {
       id: 1,
       image: "./chocoCake.png",
@@ -48,7 +48,7 @@ function CakeMenu() {
       <div className="container mx-auto mt-7">
         <ul className="flex flex-row items-center justify-center gap-11  text-gray-900">
           <li>
-            <a href="/displaycakes" className="me-4 md:me-6">
+            <a href="/displaycakes" className="me-4 underline md:me-6">
               CAKES
             </a>
           </li>
@@ -63,17 +63,17 @@ function CakeMenu() {
             </a>
           </li>
           <li>
-            <a href="/drinks" className="me-4 underline md:me-6">
+            <a href="/drinks" className="me-4 md:me-6">
               DRINKS
             </a>
           </li>
         </ul>
         <div className="flex items-center justify-center mt-10">
           <p className="text-center whitespace-pre-wrap">
-            Original cakes with poetic storytelling woven through each slice.
-            Authentic creations that awaken the senses and evoke
-            <br /> moments of edible emotion. Gluten Free (GF), Vegetarian (V)
-            and Vegan (VG) options available.
+            Black Star Pastry have lovingly reproduced some of our favourite
+            slices to be enjoyed by the sip, now available at all stores.
+            <br /> We partner with iconic specialty coffee roasters, ST. ALi -
+            blends available for purchase instore or online.
           </p>
         </div>
         <div className="flex justify-end">
@@ -85,12 +85,12 @@ function CakeMenu() {
           </button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {cakeData.map((cake) => (
-            <DisplayCake key={cake.id} {...cake} />
+          {drinksData.map((drink) => (
+            <DisplayDrinks key={drink.id} {...drink} />
           ))}
         </div>
       </div>
     </>
   );
 }
-export default CakeMenu;
+export default DrinksMenu;
