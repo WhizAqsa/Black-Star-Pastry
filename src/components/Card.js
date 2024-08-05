@@ -1,4 +1,10 @@
+import { useNavigate } from "react-router-dom";
+
 function Card() {
+  const navigate = useNavigate();
+  const goToDisplayCakes = () => {
+    navigate("/displaycakes");
+  };
   return (
     <div className="w-[300px] h-[420px] bg-white rounded-lg shadow border-2 border-black group perspective">
       <div className="relative w-full h-full duration-1000 preserve-3d group-hover:my-rotate-y-180 ">
@@ -14,6 +20,7 @@ function Card() {
                   className="w-full object-center"
                   src="/cake-2.png"
                   alt="cake-img"
+                  onClick={() => goToDisplayCakes()}
                 />
               </a>
             </div>
@@ -23,6 +30,7 @@ function Card() {
                   className="w-full object-center"
                   src="/cake-3.png"
                   alt="cake-img"
+                  onClick={() => goToDisplayCakes()}
                 />
               </a>
             </div>
@@ -32,6 +40,7 @@ function Card() {
                   className="w-full object-center "
                   src="/cake-4.png"
                   alt="cake-img"
+                  onClick={() => goToDisplayCakes()}
                 />
               </a>
             </div>
@@ -41,6 +50,7 @@ function Card() {
                   className="w-full object-center"
                   src="/cake-5.png"
                   alt="cake-img"
+                  onClick={() => goToDisplayCakes()}
                 />
               </a>
             </div>
@@ -50,6 +60,7 @@ function Card() {
                   className="w-full object-center"
                   src="/cake-6.png"
                   alt="cake-img"
+                  onClick={() => goToDisplayCakes()}
                 />
               </a>
             </div>
@@ -59,6 +70,7 @@ function Card() {
                   className="w-full object-center"
                   src="/cake-7.png"
                   alt="cake-img"
+                  onClick={() => goToDisplayCakes()}
                 />
               </a>
             </div>
@@ -68,6 +80,7 @@ function Card() {
                   className="w-full object-center "
                   src="/cake-8.png"
                   alt="cake-img"
+                  onClick={() => goToDisplayCakes()}
                 />
               </a>
             </div>
@@ -77,6 +90,7 @@ function Card() {
                   className="w-full object-center"
                   src="/cake-9.png"
                   alt="cake-img"
+                  onClick={() => goToDisplayCakes()}
                 />
               </a>
             </div>
@@ -86,6 +100,7 @@ function Card() {
                   className="w-full object-center"
                   src="/cake-1.png"
                   alt="cake-img"
+                  onClick={() => goToDisplayCakes()}
                 />
               </a>
             </div>

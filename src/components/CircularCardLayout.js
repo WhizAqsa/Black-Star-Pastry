@@ -73,7 +73,7 @@ function CircularCardLayout() {
               width: `${size}px`,
               height: `${size}px`,
               transform: `rotate(${rotationAngle}deg)`,
-              transformOrigin: `center`, //why do dfa x y
+              transformOrigin: `center`,
               display: "flex",
               justifyContent: "center",
               alignItems: "center",

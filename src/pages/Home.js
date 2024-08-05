@@ -1,5 +1,5 @@
 import Banner from "../components/Banner";
-import Category from "../components/CategoryMenu";
+import CategoryMenu from "../components/CategoryMenu";
 import Navbar from "../components/Navbar";
 
 function Home() {
@@ -7,7 +7,7 @@ function Home() {
     <>
       <Navbar />
       <Banner title="Welcome" />
-      <Category />
+      <CategoryMenu />
     </>
   );
 }

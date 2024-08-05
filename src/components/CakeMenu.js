@@ -1,5 +1,7 @@
 import DisplayCake from "./DisplayCake";
+import Navbar from "./Navbar";
 
+import { useNavigate } from "react-router-dom";
 function CakeMenu() {
   const cakeData = [
     {
@@ -35,9 +37,14 @@ function CakeMenu() {
       price: "$150.00",
     },
   ];
+  const navigate = useNavigate();
 
+  const goToHomePage = () => {
+    navigate("/home");
+  };
   return (
     <>
+      <Navbar isMainPage="true" />
       <div className="container mx-auto mt-7">
         <ul className="flex flex-row items-center justify-center gap-11  text-gray-900">
           <li>
@@ -70,7 +77,10 @@ function CakeMenu() {
           </p>
         </div>
         <div className="flex justify-end">
-          <button className="bg-black text-white px-5 py-2 rounded-lg text-xl mt-7 mb-10 mr-12">
+          <button
+            className="bg-black text-white px-5 py-2 rounded-lg text-xl mt-7 mb-10 mr-12 cursor-pointer"
+            onClick={() => goToHomePage()}
+          >
             SHOP NOW
           </button>
         </div>

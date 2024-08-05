@@ -1,13 +1,25 @@
 import { TbHomeStar, TbShoppingBagSearch } from "react-icons/tb";
 import { FaBasketShopping } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 function Navbar({ isMainPage } = { isMainPage: false }) {
+  const navigate = useNavigate();
+
   if (isMainPage) {
+    const goToHome = () => {
+      navigate("/home");
+    };
+    const goToMain = () => {
+      navigate("/");
+    };
     return (
       <nav className="bg-white border-gray-200">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a className="flex items-center h-8">
-            <TbHomeStar className="text-5xl" />
+            <TbHomeStar
+              className="text-5xl cursor-pointer"
+              onClick={() => goToMain()}
+            />
           </a>
           <div className="text-center">
             <svg
@@ -80,7 +92,10 @@ function Navbar({ isMainPage } = { isMainPage: false }) {
             </svg>
           </div>
           <a className="flex items-center h-8">
-            <TbShoppingBagSearch className="text-5xl" />
+            <TbShoppingBagSearch
+              className="text-5xl cursor-pointer"
+              onClick={() => goToHome()}
+            />
           </a>
         </div>
       </nav>
@@ -102,4 +117,3 @@ function Navbar({ isMainPage } = { isMainPage: false }) {
 }
 
 export default Navbar;
-// keep this navbar thing simple and at one place only

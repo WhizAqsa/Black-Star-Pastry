@@ -1,6 +1,6 @@
 function DisplayCake({ image, title, description }) {
   return (
-    <div className="mx-auto w-[450px]">
+    <div className="mx-auto w-[400px]">
       <div className="rounded-lg bg-white border border-gray-200">
         <img
           className="rounded-lg bg-slate-200 w-full h-full object-contain"
