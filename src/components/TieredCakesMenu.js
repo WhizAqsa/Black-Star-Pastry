@@ -6,34 +6,34 @@ function TieredCakesMenu() {
   const tieredCakesData = [
     {
       id: 1,
-      image: "./chocoCake.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./Chocolate-Mini-Tiered-Wedding-Cake.png",
+      title: "Chocolate Mini Tiered Wedding Cake",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A promising, decadent cake for a small wedding, featuring rich chocolate flavors and elegant tiers.",
       price: "$80.00",
     },
     {
       id: 2,
-      image: "./fullChoco.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./Cookie-butter-cake.png",
+      title: "Cookie Butter Cake",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A unique delicious wedding cake made with creamy cookie butter.",
       price: "$90.00",
     },
     {
       id: 3,
-      image: "./cakeball.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./tiered-cake.png",
+      title: "Pink Flower Cake",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A whimsical and charming wedding cake with pink tiers and delicate floral accents",
       price: "$100.00",
     },
     {
       id: 4,
-      image: "./cakeLayer.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./wedding-cake.png",
+      title: "Tiered Wedding Cake",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A classic and elegant traditional wedding cake with multiple tiers.",
       price: "$150.00",
     },
   ];

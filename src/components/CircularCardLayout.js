@@ -1,4 +1,4 @@
-import Card from "./Card";
+import CakeCard from "./CakeCard";
 import { useState, useRef } from "react";
 import { FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa6";
 
@@ -81,7 +81,7 @@ function CircularCardLayout() {
           >
             {Array.from({ length: cardCount }).map((_, index) => (
               <div key={index} style={getCardStyle(index)}>
-                <Card />
+                <CakeCard />
               </div>
             ))}
           </div>

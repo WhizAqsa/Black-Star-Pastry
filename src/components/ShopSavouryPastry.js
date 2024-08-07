@@ -4,34 +4,34 @@ const ShopSavouryPastry = () => {
   const savouryPastryData = [
     {
       id: 1,
-      image: "./chocoCake.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./Puff-Pastry-Cinnamon-Rolls.png",
+      title: "Puff Pastry Cinnamon Rolls",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "Made with buttery puff pastry and filled with a sweet cinnamon sugar mixture, offering a crispy exterior and a soft, gooey center.",
       price: "$80.00",
     },
     {
       id: 2,
-      image: "./fullChoco.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./Puff-Pastry.png",
+      title: "Puff-Pastry",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A versatile and flaky pastry base, characterized by its airy layers and buttery flavor.",
       price: "$90.00",
     },
     {
       id: 3,
-      image: "./cakeball.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./Farmers-Cheese-Sweet-Pastries.png",
+      title: "Farmers Cheese Sweet Pastry",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "Classic farmers cheese sweet pastry, a light and airy one filled with a creamy, tangy farmers cheese filling.",
       price: "$100.00",
     },
     {
       id: 4,
-      image: "./cakeLayer.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./fish-star-pastry.png",
+      title: "Fish Star Pastry",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A delightful and savory pastry shaped like a star, filled with a flavorful combination of fish, herbs, and cheese.",
       price: "$150.00",
     },
   ];

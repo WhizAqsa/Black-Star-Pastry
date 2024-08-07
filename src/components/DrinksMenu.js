@@ -6,34 +6,34 @@ function DrinksMenu() {
   const drinksData = [
     {
       id: 1,
-      image: "./chocoCake.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./strawberry-soju-cocktail.png",
+      title: "Strawberry Soju Cocktail",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A refreshing and fruity concoction that blends the sweetness of strawberries with the smooth kick of soju.",
       price: "$80.00",
     },
     {
       id: 2,
-      image: "./fullChoco.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./Cup-Of-Creamy-Coffee.png",
+      title: "Cup Of Creamy Coffee",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A rich and indulgent coffee beverage, characterized by its velvety texture and smooth flavor.",
       price: "$90.00",
     },
     {
       id: 3,
-      image: "./cakeball.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./coffee-with-milk.png",
+      title: "Coffee With Milk",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A classic combination of coffee and milk, offering a milder and creamier taste compared to black coffee.",
       price: "$100.00",
     },
     {
       id: 4,
-      image: "./cakeLayer.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./baileys-irish-coffee.png",
+      title: "Baileys Irish Coffee",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A warm and comforting drink made with coffee, Irish whiskey, and Baileys Irish Cream. The combination of flavors creates a rich, indulgent, and slightly sweet taste.",
       price: "$150.00",
     },
   ];

@@ -12,30 +12,30 @@ function CakeMenu() {
         "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
       price: "$80.00",
     },
-    {
+    `{
       id: 2,
       image: "./fullChoco.png",
-      title: "Black Truffle Crepe Cake",
+      title: "Decadent Chocolate Layer Cake",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A rich and velvety chocolate cake, layered with moist chocolate sponge and topped with a smooth chocolate ganache and decadent chocolate shavings.",
       price: "$90.00",
     },
     {
       id: 3,
       image: "./cakeball.png",
-      title: "Black Truffle Crepe Cake",
+      title: "Triple Chocolate Bliss Cake",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "Three layers of rich chocolate cake, separated by a smooth chocolate mousse filling and covered in a glossy chocolate glaze.",
       price: "$100.00",
     },
     {
       id: 4,
       image: "./cakeLayer.png",
-      title: "Black Truffle Crepe Cake",
+      title: "Luscious Chocolate Cake",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A luscious chocolate cake with rich chocolate sponge,luscious chocolate filling and a decadent chocolate frosting.",
       price: "$150.00",
-    },
+    },`,
   ];
   const navigate = useNavigate();
 

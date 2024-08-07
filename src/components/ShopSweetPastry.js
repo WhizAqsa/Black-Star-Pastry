@@ -4,34 +4,34 @@ const ShopSweetPastry = () => {
   const sweetPastryData = [
     {
       id: 1,
-      image: "./chocoCake.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./chocolate-pastry.png",
+      title: "Chocolate Pastry",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "Indulge in pure decadence with a rich, velvety chocolate pastry filled with smooth filling.",
       price: "$80.00",
     },
     {
       id: 2,
-      image: "./fullChoco.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./Chocolate-Truffle-Pastry.png",
+      title: "Chocolate Truffle Pastry",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A luxurious pastry filled with a smooth, creamy chocolate truffle filling, encased in a delicate chocolate shell.",
       price: "$90.00",
     },
     {
       id: 3,
-      image: "./cakeball.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./Classic-French-Pastry.png",
+      title: "Classic French Pastry",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A symphony of textures and flavors that epitomizes French elegance and sophistication.",
       price: "$100.00",
     },
     {
       id: 4,
-      image: "./cakeLayer.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./EgglessDutchTrufflePastry.png",
+      title: "Eggless Dutch Truffle Pastry",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A rich and indulgent Dutch pastry made with a creamy, chocolate truffle filling and a hint of orange zest.",
       price: "$150.00",
     },
   ];

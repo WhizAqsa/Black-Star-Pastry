@@ -1,37 +1,28 @@
 import AddOnsPriceCard from "./AddOnsPriceCard";
-
 const ShopAddOns = () => {
   const addOnsData = [
     {
       id: 1,
-      image: "./chocoCake.png",
-      title: "Black Truffle Crepe Cake",
-      description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+      image: "./teddy-bear.png",
+      title: "Soft and Sweet Teddy",
       price: "$80.00",
     },
     {
       id: 2,
-      image: "./fullChoco.png",
-      title: "Black Truffle Crepe Cake",
-      description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+      image: "./birthday-card.png",
+      title: "Heartfelt Birthday Wishes",
       price: "$90.00",
     },
     {
       id: 3,
-      image: "./cakeball.png",
-      title: "Black Truffle Crepe Cake",
-      description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+      image: "./birthday-banner.png",
+      title: "Sparkling Birthday Banner",
       price: "$100.00",
     },
     {
       id: 4,
-      image: "./cakeLayer.png",
-      title: "Black Truffle Crepe Cake",
-      description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+      image: "./wish-cards.png",
+      title: "Personalized Wish Card",
       price: "$150.00",
     },
   ];
@@ -53,7 +44,7 @@ const ShopAddOns = () => {
             Add Ons
           </a>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 absolute right-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 absolute right-0">
           {addOnsData.map((addOn) => (
             <AddOnsPriceCard key={addOn.id} {...addOn} />
           ))}

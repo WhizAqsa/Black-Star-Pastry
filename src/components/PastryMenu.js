@@ -6,34 +6,33 @@ function PastryMenu() {
   const pastryData = [
     {
       id: 1,
-      image: "./chocoCake.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./Puff-Pastry-Cinnamon-Rolls.png",
+      title: "Puff Pastry Cinnamon Rolls",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "Made with buttery puff pastry and filled with a sweet cinnamon sugar mixture, offering a crispy exterior and a soft, gooey center.",
       price: "$80.00",
     },
     {
       id: 2,
-      image: "./fullChoco.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./Chocolate-Truffle-Pastry.png",
+      title: "Chocolate Truffle Pastry",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
-      price: "$90.00",
+        "A luxurious pastry filled with a smooth, creamy chocolate truffle filling, encased in a delicate chocolate shell.",
     },
     {
       id: 3,
-      image: "./cakeball.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./Farmers-Cheese-Sweet-Pastries.png",
+      title: "Farmers Cheese Sweet Pastry",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A light and airy pastry filled with a creamy, tangy farmers cheese filling.",
       price: "$100.00",
     },
     {
       id: 4,
-      image: "./cakeLayer.png",
-      title: "Black Truffle Crepe Cake",
+      image: "./EgglessDutchTrufflePastry.png",
+      title: "Eggless Dutch Truffle Pastry",
       description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
+        "A rich and indulgent Dutch pastry made with a creamy, chocolate truffle filling and a hint of orange zest.",
       price: "$150.00",
     },
   ];
