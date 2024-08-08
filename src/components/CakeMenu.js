@@ -1,47 +1,34 @@
+import Axios from "axios";
 import DisplayCake from "./DisplayCake";
 import Navbar from "./Navbar";
-
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 function CakeMenu() {
-  const cakeData = [
-    {
-      id: 1,
-      image: "./chocoCake.png",
-      title: "Black Truffle Crepe Cake",
-      description:
-        "A savoury crepe cake made with buckwheat pancakes layered with a creamy blend of black truffle, herbs, and roasted mushrooms. (GF, V)",
-      price: "$80.00",
-    },
-    `{
-      id: 2,
-      image: "./fullChoco.png",
-      title: "Decadent Chocolate Layer Cake",
-      description:
-        "A rich and velvety chocolate cake, layered with moist chocolate sponge and topped with a smooth chocolate ganache and decadent chocolate shavings.",
-      price: "$90.00",
-    },
-    {
-      id: 3,
-      image: "./cakeball.png",
-      title: "Triple Chocolate Bliss Cake",
-      description:
-        "Three layers of rich chocolate cake, separated by a smooth chocolate mousse filling and covered in a glossy chocolate glaze.",
-      price: "$100.00",
-    },
-    {
-      id: 4,
-      image: "./cakeLayer.png",
-      title: "Luscious Chocolate Cake",
-      description:
-        "A luscious chocolate cake with rich chocolate sponge,luscious chocolate filling and a decadent chocolate frosting.",
-      price: "$150.00",
-    },`,
-  ];
   const navigate = useNavigate();
-
   const goToHomePage = () => {
     navigate("/home");
   };
+
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchCakes = async () => {
+      try {
+        const response = await Axios.get(
+          "http://localhost:4000/api/blackstarpastry/cake"
+        );
+        if (response.status === 200) {
+          setData(response.data);
+          console.log("Cakes data fetched:", response.data);
+        }
+      } catch (error) {
+        console.log("Error fetching cakes", error);
+        setError(error);
+      }
+    };
+    fetchCakes();
+  }, []);
   return (
     <>
       <Navbar isMainPage="true" />
@@ -85,9 +72,11 @@ function CakeMenu() {
           </button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {cakeData.map((cake) => (
+          {/* {cakeData.map((cake) => (
             <DisplayCake key={cake.id} {...cake} />
-          ))}
+          ))} */}
+
+          {data && data.map((cake) => <DisplayCake key={cake._id} {...cake} />)}
         </div>
       </div>
     </>

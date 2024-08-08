@@ -1,41 +1,27 @@
 import SavouryPastryPriceCard from "./SavouryPastryPriceCard";
-
+import { useEffect, useState } from "react";
+import Axios from "axios";
 const ShopSavouryPastry = () => {
-  const savouryPastryData = [
-    {
-      id: 1,
-      image: "./Puff-Pastry-Cinnamon-Rolls.png",
-      title: "Puff Pastry Cinnamon Rolls",
-      description:
-        "Made with buttery puff pastry and filled with a sweet cinnamon sugar mixture, offering a crispy exterior and a soft, gooey center.",
-      price: "$80.00",
-    },
-    {
-      id: 2,
-      image: "./Puff-Pastry.png",
-      title: "Puff-Pastry",
-      description:
-        "A versatile and flaky pastry base, characterized by its airy layers and buttery flavor.",
-      price: "$90.00",
-    },
-    {
-      id: 3,
-      image: "./Farmers-Cheese-Sweet-Pastries.png",
-      title: "Farmers Cheese Sweet Pastry",
-      description:
-        "Classic farmers cheese sweet pastry, a light and airy one filled with a creamy, tangy farmers cheese filling.",
-      price: "$100.00",
-    },
-    {
-      id: 4,
-      image: "./fish-star-pastry.png",
-      title: "Fish Star Pastry",
-      description:
-        "A delightful and savory pastry shaped like a star, filled with a flavorful combination of fish, herbs, and cheese.",
-      price: "$150.00",
-    },
-  ];
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
 
+  useEffect(() => {
+    const fetchSavouryPastries = async () => {
+      try {
+        const response = await Axios.get(
+          "http://localhost:4000/api/blackstarpastry/savourypastry"
+        );
+        if (response.status === 200) {
+          setData(response.data);
+          console.log("Savoury Pastry data fetched:", response.data);
+        }
+      } catch (error) {
+        console.log("Error fetching savoury pastry data", error);
+        setError(error);
+      }
+    };
+    fetchSavouryPastries();
+  }, []);
   return (
     <div className="container mx-auto relative max-w mb-10">
       <div className="grid grid-cols-2 gap-2">
@@ -54,9 +40,16 @@ const ShopSavouryPastry = () => {
           </a>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 absolute right-0">
-          {savouryPastryData.map((savouryPastry) => (
+          {/* {savouryPastryData.map((savouryPastry) => (
             <SavouryPastryPriceCard key={savouryPastry.id} {...savouryPastry} />
-          ))}
+          ))} */}
+          {data &&
+            data.map((savourypastry) => (
+              <SavouryPastryPriceCard
+                key={savourypastry._id}
+                {...savourypastry}
+              />
+            ))}
         </div>
       </div>
     </div>

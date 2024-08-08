@@ -1,46 +1,28 @@
+import { useEffect, useState } from "react";
 import DisplayPastry from "./DisplayCake";
 import Navbar from "./Navbar";
 
 import { useNavigate } from "react-router-dom";
+import Axios from "axios";
 function PastryMenu() {
-  const pastryData = [
-    {
-      id: 1,
-      image: "./Puff-Pastry-Cinnamon-Rolls.png",
-      title: "Puff Pastry Cinnamon Rolls",
-      description:
-        "Made with buttery puff pastry and filled with a sweet cinnamon sugar mixture, offering a crispy exterior and a soft, gooey center.",
-      price: "$80.00",
-    },
-    {
-      id: 2,
-      image: "./Chocolate-Truffle-Pastry.png",
-      title: "Chocolate Truffle Pastry",
-      description:
-        "A luxurious pastry filled with a smooth, creamy chocolate truffle filling, encased in a delicate chocolate shell.",
-    },
-    {
-      id: 3,
-      image: "./Farmers-Cheese-Sweet-Pastries.png",
-      title: "Farmers Cheese Sweet Pastry",
-      description:
-        "A light and airy pastry filled with a creamy, tangy farmers cheese filling.",
-      price: "$100.00",
-    },
-    {
-      id: 4,
-      image: "./EgglessDutchTrufflePastry.png",
-      title: "Eggless Dutch Truffle Pastry",
-      description:
-        "A rich and indulgent Dutch pastry made with a creamy, chocolate truffle filling and a hint of orange zest.",
-      price: "$150.00",
-    },
-  ];
   const navigate = useNavigate();
-
   const goToHomePage = () => {
     navigate("/home");
   };
+  const [data, setData] = useState(null);
+  useEffect(() => {
+    const fetchPastries = async () => {
+      const response = await Axios.get(
+        "http://localhost:4000/api/blackstarpastry/pastry"
+      );
+      if (response.status === 200) {
+        setData(response.data);
+      } else {
+        console.log("Error fetching pastries");
+      }
+    };
+    fetchPastries();
+  }, []);
   return (
     <>
       <Navbar isMainPage="true" />
@@ -84,9 +66,13 @@ function PastryMenu() {
           </button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {pastryData.map((pastry) => (
+          {/* {pastryData.map((pastry) => (
             <DisplayPastry key={pastry.id} {...pastry} />
-          ))}
+          ))} */}
+          {data &&
+            data.map((pastry) => (
+              <DisplayPastry key={pastry._id} {...pastry} />
+            ))}
         </div>
       </div>
     </>

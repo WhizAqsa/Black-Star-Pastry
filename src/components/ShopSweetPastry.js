@@ -1,41 +1,27 @@
 import PastryPriceCard from "./SweetPastryPriceCard";
-
+import { useEffect, useState } from "react";
+import Axios from "axios";
 const ShopSweetPastry = () => {
-  const sweetPastryData = [
-    {
-      id: 1,
-      image: "./chocolate-pastry.png",
-      title: "Chocolate Pastry",
-      description:
-        "Indulge in pure decadence with a rich, velvety chocolate pastry filled with smooth filling.",
-      price: "$80.00",
-    },
-    {
-      id: 2,
-      image: "./Chocolate-Truffle-Pastry.png",
-      title: "Chocolate Truffle Pastry",
-      description:
-        "A luxurious pastry filled with a smooth, creamy chocolate truffle filling, encased in a delicate chocolate shell.",
-      price: "$90.00",
-    },
-    {
-      id: 3,
-      image: "./Classic-French-Pastry.png",
-      title: "Classic French Pastry",
-      description:
-        "A symphony of textures and flavors that epitomizes French elegance and sophistication.",
-      price: "$100.00",
-    },
-    {
-      id: 4,
-      image: "./EgglessDutchTrufflePastry.png",
-      title: "Eggless Dutch Truffle Pastry",
-      description:
-        "A rich and indulgent Dutch pastry made with a creamy, chocolate truffle filling and a hint of orange zest.",
-      price: "$150.00",
-    },
-  ];
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
 
+  useEffect(() => {
+    const fetchSweetPastries = async () => {
+      try {
+        const response = await Axios.get(
+          "http://localhost:4000/api/blackstarpastry/sweetpastry"
+        );
+        if (response.status === 200) {
+          setData(response.data);
+          console.log("Sweet Pastry data fetched:", response.data);
+        }
+      } catch (error) {
+        console.log("Error fetching sweet pastry data", error);
+        setError(error);
+      }
+    };
+    fetchSweetPastries();
+  }, []);
   return (
     <div className="container mx-auto relative max-w mb-10">
       <div className="grid grid-cols-2 gap-2">
@@ -54,9 +40,13 @@ const ShopSweetPastry = () => {
           </a>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 absolute right-0">
-          {sweetPastryData.map((sweetPastry) => (
+          {/* {sweetPastryData.map((sweetPastry) => (
             <PastryPriceCard key={sweetPastry.id} {...sweetPastry} />
-          ))}
+          ))} */}
+          {data &&
+            data.map((sweetpastry) => (
+              <PastryPriceCard key={sweetpastry._id} {...sweetpastry} />
+            ))}
         </div>
       </div>
     </div>

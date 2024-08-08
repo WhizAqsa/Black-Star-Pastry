@@ -1,47 +1,31 @@
+import { useEffect, useState } from "react";
 import DisplayDrinks from "./DisplayDrinks";
 import Navbar from "./Navbar";
-
+import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 function DrinksMenu() {
-  const drinksData = [
-    {
-      id: 1,
-      image: "./strawberry-soju-cocktail.png",
-      title: "Strawberry Soju Cocktail",
-      description:
-        "A refreshing and fruity concoction that blends the sweetness of strawberries with the smooth kick of soju.",
-      price: "$80.00",
-    },
-    {
-      id: 2,
-      image: "./Cup-Of-Creamy-Coffee.png",
-      title: "Cup Of Creamy Coffee",
-      description:
-        "A rich and indulgent coffee beverage, characterized by its velvety texture and smooth flavor.",
-      price: "$90.00",
-    },
-    {
-      id: 3,
-      image: "./coffee-with-milk.png",
-      title: "Coffee With Milk",
-      description:
-        "A classic combination of coffee and milk, offering a milder and creamier taste compared to black coffee.",
-      price: "$100.00",
-    },
-    {
-      id: 4,
-      image: "./baileys-irish-coffee.png",
-      title: "Baileys Irish Coffee",
-      description:
-        "A warm and comforting drink made with coffee, Irish whiskey, and Baileys Irish Cream. The combination of flavors creates a rich, indulgent, and slightly sweet taste.",
-      price: "$150.00",
-    },
-  ];
   const navigate = useNavigate();
-
   const goToHomePage = () => {
     navigate("/home");
   };
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  useEffect(() => {
+    const fetchDrinks = async () => {
+      try {
+        const response = await Axios.get(
+          "http://localhost:4000/api/blackstarpastry/drink"
+        );
+        if (response.status === 200) {
+          setData(response.data);
+        }
+      } catch (error) {
+        console.log("Error fetching drinks!");
+        setError(error);
+      }
+    };
+    fetchDrinks();
+  }, []);
   return (
     <>
       <Navbar isMainPage="true" />
@@ -85,9 +69,11 @@ function DrinksMenu() {
           </button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {drinksData.map((drink) => (
+          {/* {drinksData.map((drink) => (
             <DisplayDrinks key={drink.id} {...drink} />
-          ))}
+          ))} */}
+          {data &&
+            data.map((drink) => <DisplayDrinks key={drink._id} {...drink} />)}
         </div>
       </div>
     </>

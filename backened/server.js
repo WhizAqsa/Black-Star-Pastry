@@ -1,11 +1,13 @@
 require("dotenv").config();
-const blackStarRoutes = require("./routes/blackstar");
+const blackStarPastryRoutes = require("./routes/blackstarpastry");
 const { config } = require("dotenv");
 const express = require("express");
+const cors = require("cors");
 const mongoose = require("mongoose");
 
 //express app
 const app = express();
+app.use(cors());
 
 //middleware
 app.use(express.json()); //to parse the body sent in a req
@@ -15,7 +17,7 @@ app.use((req, res, next) => {
 });
 
 //routes
-app.use("/api/blackstar", blackStarRoutes);
+app.use("/api/blackstarpastry", blackStarPastryRoutes);
 
 //connect to db
 mongoose

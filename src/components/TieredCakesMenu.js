@@ -1,47 +1,35 @@
 import DisplayTieredCakes from "./DisplayTieredCakes";
 import Navbar from "./Navbar";
-
+import { useEffect, useState } from "react";
+import Axios from "axios";
 import { useNavigate } from "react-router-dom";
 function TieredCakesMenu() {
-  const tieredCakesData = [
-    {
-      id: 1,
-      image: "./Chocolate-Mini-Tiered-Wedding-Cake.png",
-      title: "Chocolate Mini Tiered Wedding Cake",
-      description:
-        "A promising, decadent cake for a small wedding, featuring rich chocolate flavors and elegant tiers.",
-      price: "$80.00",
-    },
-    {
-      id: 2,
-      image: "./Cookie-butter-cake.png",
-      title: "Cookie Butter Cake",
-      description:
-        "A unique delicious wedding cake made with creamy cookie butter.",
-      price: "$90.00",
-    },
-    {
-      id: 3,
-      image: "./tiered-cake.png",
-      title: "Pink Flower Cake",
-      description:
-        "A whimsical and charming wedding cake with pink tiers and delicate floral accents",
-      price: "$100.00",
-    },
-    {
-      id: 4,
-      image: "./wedding-cake.png",
-      title: "Tiered Wedding Cake",
-      description:
-        "A classic and elegant traditional wedding cake with multiple tiers.",
-      price: "$150.00",
-    },
-  ];
   const navigate = useNavigate();
 
   const goToHomePage = () => {
     navigate("/home");
   };
+
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchTieredCakes = async () => {
+      try {
+        const response = await Axios.get(
+          "http://localhost:4000/api/blackstarpastry/tieredcake"
+        );
+        if (response.status === 200) {
+          setData(response.data);
+          console.log("Tiered Cakes data fetched:", response.data);
+        }
+      } catch (error) {
+        console.log("Error fetching tiered cakes", error);
+        setError(error);
+      }
+    };
+    fetchTieredCakes();
+  }, []);
   return (
     <>
       <Navbar isMainPage="true" />
@@ -84,9 +72,13 @@ function TieredCakesMenu() {
           </button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {tieredCakesData.map((tieredCake) => (
+          {/* {tieredCakesData.map((tieredCake) => (
             <DisplayTieredCakes key={tieredCake.id} {...tieredCake} />
-          ))}
+          ))} */}
+          {data &&
+            data.map((tieredcake) => (
+              <DisplayTieredCakes key={tieredcake._id} {...tieredcake} />
+            ))}
         </div>
       </div>
     </>
