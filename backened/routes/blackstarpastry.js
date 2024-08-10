@@ -19,12 +19,21 @@ const {
   createTieredCake,
   getTieredCakes,
 } = require("../controllers/tieredCakeController");
+const {
+  getShopCakes,
+  createShopCake,
+} = require("../controllers/shopCakeController");
 const router = express.Router();
 
 //creates a cake
 router.post("/cake", createCake);
 //get cakes
 router.get("/cake", getCakes);
+
+//creates cakes to be shopped
+router.post("/shopcake", createShopCake);
+//get cakes to be shopped
+router.get("/shopcake", getShopCakes);
 
 //creates pastry
 router.post("/pastry", createPastry);
