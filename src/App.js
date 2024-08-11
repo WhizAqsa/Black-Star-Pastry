@@ -9,16 +9,15 @@ import Drinks from "./pages/Drinks";
 import SavouryPastry from "./pages/SavouryPastry";
 import SweetPastry from "./pages/SweetPastry";
 import AddOns from "./pages/AddOns";
-//import DisplayCart from "./components/DisplayCart";
 import CartDetails from "./pages/CartDetails";
+import Login from "./pages/Login";
 function App() {
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<Main />} />
-
+        <Route exact path="/login" element={<Login />} />
         <Route exact path="/home" element={<Home />} />
-
         <Route exact path="/cakes" element={<Cakes />} />
         <Route exact path="/pastry" element={<Pastry />} />
         <Route exact path="/sweetpastry" element={<SweetPastry />} />
@@ -30,7 +29,6 @@ function App() {
         <Route exact path="/displaycakes" element={<CakeMenu />} />
       </Routes>
     </Router>
-    //<DisplayCart />
   );
 }
 export default App;

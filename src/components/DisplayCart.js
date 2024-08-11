@@ -38,7 +38,7 @@ const DisplayCart = () => {
             </tr>
           </thead>
           <tbody>
-            {cart.length === 0 && ( // is ko center kr lena
+            {cart.length === 0 && (
               <tr className="bg-white border-b hover:bg-gray-5">
                 <td colSpan="5" className="p-4 text-center">
                   <p className="">Cart is empty</p>
