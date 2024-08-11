@@ -1,5 +1,4 @@
 const CakePriceCard = ({ image, title, price, description, onClick }) => {
-  console.log(image, title, price, description);
   return (
     <div className="bg-white border rounded-md shadow-md shadow-slate-100">
       <img

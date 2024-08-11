@@ -18,6 +18,7 @@ const CartPopUpModal = ({ isVisible, onClose, product }) => {
           title={product.title}
           description={product.description}
           price={product.price}
+          itemId={product.id}
         />
       </div>
     </div>

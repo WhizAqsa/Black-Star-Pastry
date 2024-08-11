@@ -12,6 +12,7 @@ function Navbar({ isMainPage } = { isMainPage: false }) {
     const goToMain = () => {
       navigate("/");
     };
+
     return (
       <nav className="bg-white border-gray-200">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -101,6 +102,9 @@ function Navbar({ isMainPage } = { isMainPage: false }) {
       </nav>
     );
   } else {
+    const goToCartDetails = () => {
+      navigate("/cart-details");
+    };
     return (
       <nav className="bg-white border-gray-200 shadow-md px-4 py-8 z-10">
         <div className="flex flex-wrap justify-between items-center container mx-auto">
@@ -108,7 +112,10 @@ function Navbar({ isMainPage } = { isMainPage: false }) {
             <img src="/logo-main.svg" />
           </div>
           <a className="">
-            <FaBasketShopping className="text-lg" />
+            <FaBasketShopping
+              className="text-lg cursor-pointer"
+              onClick={() => goToCartDetails()}
+            />
           </a>
         </div>
       </nav>

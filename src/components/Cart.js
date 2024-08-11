@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
-
-const Cart = ({ title, image, description, price }) => {
+import { useCartStore } from "../store/cart-store";
+const Cart = ({ title, image, description, price, itemId }) => {
   const [count, setCount] = useState(1);
   const incrementCount = () => {
     setCount(count + 1);
@@ -11,13 +11,12 @@ const Cart = ({ title, image, description, price }) => {
       setCount(count - 1);
     }
   };
+  const addToCart = useCartStore((state) => state.addToCart);
 
   return (
     <div className="container flex flex-col h-full mb-2">
       <img
         src={image}
-        // isko ap dek len, i g wo msla solve ho gaya, right?yes
-        //thank you!!, no prb x
         className="w-full h-[400px] object-cover border border-gray-200 bg-slate-200"
       />
       <div className="container mx-auto ">
@@ -42,6 +41,14 @@ const Cart = ({ title, image, description, price }) => {
         <div
           className="container mx-auto border-black cursor-pointer bg-black bg-opacity-50 md:w-[500px] sm:w-[280px] h-[45px]"
           onClick={function () {
+            addToCart({
+              id: itemId,
+              image: image,
+              title: title,
+              price: price,
+              quantity: count,
+            });
+
             Swal.fire({
               position: "center",
               icon: "success",

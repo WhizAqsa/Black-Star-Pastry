@@ -15,6 +15,7 @@ const Category = ({ image, title }) => {
   const goToAddOns = () => {
     navigate("/addons");
   };
+
   return (
     <div className="mx-auto w-[500px]">
       <div className="bg-white border border-gray-200">

@@ -16,8 +16,6 @@ const ShopCake = () => {
         );
         if (response.status === 200) {
           setCakes(response.data);
-          console.log("Cakes to be shopped fetched:", response.data);
-          console.log(cakes);
         }
       } catch (error) {
         console.log("Error fetching cakes to be shopped", error);

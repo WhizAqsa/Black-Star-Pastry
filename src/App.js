@@ -9,7 +9,8 @@ import Drinks from "./pages/Drinks";
 import SavouryPastry from "./pages/SavouryPastry";
 import SweetPastry from "./pages/SweetPastry";
 import AddOns from "./pages/AddOns";
-import Cart from "./components/Cart";
+//import DisplayCart from "./components/DisplayCart";
+import CartDetails from "./pages/CartDetails";
 function App() {
   return (
     <Router>
@@ -23,18 +24,13 @@ function App() {
         <Route exact path="/sweetpastry" element={<SweetPastry />} />
         <Route exact path="/savourypastry" element={<SavouryPastry />} />
         <Route exact path="/tieredcakes" element={<TieredCakes />} />
-
+        <Route exact path="/cart-details" element={<CartDetails />} />
         <Route exact path="/drinks" element={<Drinks />} />
         <Route exact path="/addons" element={<AddOns />} />
         <Route exact path="/displaycakes" element={<CakeMenu />} />
       </Routes>
     </Router>
-    // <Cart
-    //   image="./cakeball.png"
-    //   title="CakeBall"
-    //   description="yummy chocolare cakeee"
-    //   price="$50.00"
-    // />
+    //<DisplayCart />
   );
 }
 export default App;
