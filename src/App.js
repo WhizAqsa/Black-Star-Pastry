@@ -11,12 +11,14 @@ import SweetPastry from "./pages/SweetPastry";
 import AddOns from "./pages/AddOns";
 import CartDetails from "./pages/CartDetails";
 import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 function App() {
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<Main />} />
         <Route exact path="/login" element={<Login />} />
+        <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/cakes" element={<Cakes />} />
         <Route exact path="/pastry" element={<Pastry />} />
