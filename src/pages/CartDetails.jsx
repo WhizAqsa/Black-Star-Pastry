@@ -2,7 +2,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { useCartStore } from "../store/cart-store";
 import Swal from "sweetalert2";
-const DisplayCart = () => {
+
+const CartDetails = () => {
   const { cart, removeFromCart, clearCart } = useCartStore((state) => ({
     cart: state.cart,
     removeFromCart: state.removeFromCart,
@@ -108,4 +109,4 @@ const DisplayCart = () => {
   );
 };
 
-export default DisplayCart;
+export default CartDetails;

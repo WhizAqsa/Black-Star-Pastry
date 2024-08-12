@@ -1,9 +1,12 @@
 import Axios from "axios";
-import DisplayCake from "./DisplayCake";
 import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-function CakeMenu() {
+import Grid from "./Grid";
+import ProductDisplay from "./ProductDisplay";
+import DisplaySelectionList from "./DisplaySelectionList";
+
+const DisplayCakes = () => {
   const navigate = useNavigate();
   const goToHomePage = () => {
     navigate("/home");
@@ -32,29 +35,9 @@ function CakeMenu() {
   return (
     <>
       <Navbar isMainPage="true" />
-      <div className="container mx-auto mt-7">
-        <ul className="flex flex-row items-center justify-center gap-11  text-gray-900">
-          <li>
-            <a href="/displaycakes" className="me-4 md:me-6">
-              CAKES
-            </a>
-          </li>
-          <li>
-            <a href="/pastry" className="me-4 underline md:me-6">
-              PASTRY
-            </a>
-          </li>
-          <li>
-            <a href="/tieredcakes" className="me-4 underline md:me-6">
-              TIERED CAKES
-            </a>
-          </li>
-          <li>
-            <a href="/drinks" className="me-4 underline md:me-6">
-              DRINKS
-            </a>
-          </li>
-        </ul>
+      <div className="container p-2 sm:p-4 md:p-8 mx-auto mt-7">
+        <DisplaySelectionList selected="cakes" />
+
         <div className="flex items-center justify-center mt-10">
           <p className="text-center whitespace-pre-wrap">
             Original cakes with poetic storytelling woven through each slice.
@@ -71,15 +54,20 @@ function CakeMenu() {
             SHOP NOW
           </button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* {cakeData.map((cake) => (
-            <DisplayCake key={cake.id} {...cake} />
-          ))} */}
-
-          {data && data.map((cake) => <DisplayCake key={cake._id} {...cake} />)}
-        </div>
+        <Grid>
+          {data &&
+            data.map(({ _id, image, description, title }) => (
+              <ProductDisplay
+                key={_id}
+                image={image}
+                title={title}
+                description={description}
+              />
+            ))}
+        </Grid>
       </div>
     </>
   );
-}
-export default CakeMenu;
+};
+
+export default DisplayCakes;

@@ -20,22 +20,11 @@ const Category = ({ image, title }) => {
     <div className="w-fit p-4">
       <div
         className="bg-white border border-gray-200"
-        onClick={
-          () => {
-            const href = "/" + title.split(" ").join("").toLowerCase();
-            console.log(href);
-            navigate(href);
-          }
-          // title === "Cakes"
-          //   ? goToCakes
-          //   : title === "Sweet Pastry"
-          //   ? goToSweetPastry
-          //   : title === "Savoury Pastry"
-          //   ? goToSavouryPastry
-          //   : title === "Add Ons"
-          //   ? goToAddOns // commit bhi kr liya karein, or record nahi hoga ap k paas rollback krny k liye in case someithngi goes wrong//krty hn dikaoun??
-          //   : undefined
-        }
+        onClick={() => {
+          const href = "/" + title.split(" ").join("").toLowerCase();
+          console.log(href);
+          navigate(href);
+        }}
       >
         <img
           src={image}

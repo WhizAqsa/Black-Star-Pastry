@@ -1,9 +1,12 @@
-import DisplayTieredCakes from "./DisplayTieredCakes";
 import Navbar from "./Navbar";
 import { useEffect, useState } from "react";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
-function TieredCakesMenu() {
+import DisplaySelectionList from "./DisplaySelectionList";
+import Grid from "./Grid";
+import ProductDisplay from "./ProductDisplay";
+
+const TieredCakes = () => {
   const navigate = useNavigate();
 
   const goToHomePage = () => {
@@ -33,29 +36,8 @@ function TieredCakesMenu() {
   return (
     <>
       <Navbar isMainPage="true" />
-      <div className="container mx-auto mt-7">
-        <ul className="flex flex-row items-center justify-center gap-11  text-gray-900">
-          <li>
-            <a href="/displaycakes" className="me-4 underline md:me-6">
-              CAKES
-            </a>
-          </li>
-          <li>
-            <a href="/pastry" className="me-4 underline md:me-6">
-              PASTRY
-            </a>
-          </li>
-          <li>
-            <a href="/tieredcakes" className="me-4 md:me-6">
-              TIERED CAKES
-            </a>
-          </li>
-          <li>
-            <a href="/drinks" className="me-4 underline md:me-6">
-              DRINKS
-            </a>
-          </li>
-        </ul>
+      <div className="container p-2 sm:p-4 md:p-8 mx-auto mt-7">
+        <DisplaySelectionList selected="tiered cakes" />
         <div className="flex items-center justify-center mt-10">
           <p className="text-center whitespace-pre-wrap">
             Iconic centerpieces for any occasion. All of our famous flavours are
@@ -71,17 +53,20 @@ function TieredCakesMenu() {
             SHOP NOW
           </button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* {tieredCakesData.map((tieredCake) => (
-            <DisplayTieredCakes key={tieredCake.id} {...tieredCake} />
-          ))} */}
+        <Grid>
           {data &&
-            data.map((tieredcake) => (
-              <DisplayTieredCakes key={tieredcake._id} {...tieredcake} />
+            data.map(({ _id, image, description, title }) => (
+              <ProductDisplay
+                key={_id}
+                image={image}
+                description={description}
+                title={title}
+              />
             ))}
-        </div>
+        </Grid>
       </div>
     </>
   );
-}
-export default TieredCakesMenu;
+};
+
+export default TieredCakes;

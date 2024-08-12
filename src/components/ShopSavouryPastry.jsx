@@ -40,9 +40,6 @@ const ShopSavouryPastry = () => {
           </a>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 absolute right-0">
-          {/* {savouryPastryData.map((savouryPastry) => (
-            <SavouryPastryPriceCard key={savouryPastry.id} {...savouryPastry} />
-          ))} */}
           {data &&
             data.map((savourypastry) => (
               <SavouryPastryPriceCard

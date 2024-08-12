@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
-import DisplayDrinks from "./DisplayDrinks";
 import Navbar from "./Navbar";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
-function DrinksMenu() {
+import Grid from "./Grid";
+import ProductDisplay from "./ProductDisplay";
+import DisplaySelectionList from "./DisplaySelectionList";
+
+const Drinks = () => {
   const navigate = useNavigate();
   const goToHomePage = () => {
     navigate("/home");
@@ -29,29 +32,8 @@ function DrinksMenu() {
   return (
     <>
       <Navbar isMainPage="true" />
-      <div className="container mx-auto mt-7">
-        <ul className="flex flex-row items-center justify-center gap-11  text-gray-900">
-          <li>
-            <a href="/displaycakes" className="me-4 underline md:me-6">
-              CAKES
-            </a>
-          </li>
-          <li>
-            <a href="/pastry" className="me-4 underline md:me-6">
-              PASTRY
-            </a>
-          </li>
-          <li>
-            <a href="/tieredcakes" className="me-4 underline md:me-6">
-              TIERED CAKES
-            </a>
-          </li>
-          <li>
-            <a href="/drinks" className="me-4 md:me-6">
-              DRINKS
-            </a>
-          </li>
-        </ul>
+      <div className="container p-2 sm:p-4 md:p-8 mx-auto mt-7">
+        <DisplaySelectionList selected="drinks" />
         <div className="flex items-center justify-center mt-10">
           <p className="text-center whitespace-pre-wrap">
             Black Star Pastry have lovingly reproduced some of our favourite
@@ -68,15 +50,20 @@ function DrinksMenu() {
             SHOP NOW
           </button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* {drinksData.map((drink) => (
-            <DisplayDrinks key={drink.id} {...drink} />
-          ))} */}
+        <Grid>
           {data &&
-            data.map((drink) => <DisplayDrinks key={drink._id} {...drink} />)}
-        </div>
+            data.map(({ _id, image, description, title }) => (
+              <ProductDisplay
+                key={_id}
+                image={image}
+                description={description}
+                title={title}
+              />
+            ))}
+        </Grid>
       </div>
     </>
   );
-}
-export default DrinksMenu;
+};
+
+export default Drinks;

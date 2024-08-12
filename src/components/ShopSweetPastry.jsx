@@ -24,8 +24,8 @@ const ShopSweetPastry = () => {
   }, []);
   return (
     <div className="container mx-auto relative max-w mb-10">
-      <div className="grid grid-cols-2 gap-2">
-        <div className="flex flex-col shadow-md border-r-2 w-[400px] h-full ml-4 p-10">
+      <div className="flex flex-col md:flex-row md:items-start p-2 gap-2">
+        <aside className="flex flex-col p-4  md:w-60 md:sticky md:top-0 md:h-auto">
           <a href="/cakes" className="tracking-tighter mb-2">
             Cakes
           </a>
@@ -38,11 +38,11 @@ const ShopSweetPastry = () => {
           <a href="/addons" className="tracking-tighter">
             Add Ons
           </a>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 absolute right-0">
-          {/* {sweetPastryData.map((sweetPastry) => (
-            <PastryPriceCard key={sweetPastry.id} {...sweetPastry} />
-          ))} */}
+        </aside>
+        <div
+          className="flex-1 grid gap-4"
+          style={{ gridTemplateColumns: `repeat(auto-fit,minmax(18rem,1fr))` }}
+        >
           {data &&
             data.map((sweetpastry) => (
               <PastryPriceCard key={sweetpastry._id} {...sweetpastry} />

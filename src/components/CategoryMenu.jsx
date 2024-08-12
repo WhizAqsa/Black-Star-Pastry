@@ -22,6 +22,6 @@ const CategoryMenu = () => {
       </div>
     </div>
   );
-}; //mtlb kr b dya?
+};
 
 export default CategoryMenu;

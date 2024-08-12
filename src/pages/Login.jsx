@@ -1,7 +1,30 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import Axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const LoginDetails = () => {
+const Login = () => {
+  const [firstname, setFirstName] = useState("");
+  const [lastname, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [birthday, setBirthday] = useState("");
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const loginDetails = { firstname, lastname, email, password, birthday };
+    try {
+      await Axios.post(
+        "http://localhost:4000/api/blackstarpastry/login",
+        loginDetails
+      ).then((result) => console.log(result));
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <section className="bg-black backdrop-blur-md bg-opacity-10 dark:bg-white">
       <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -18,12 +41,13 @@ const LoginDetails = () => {
               Login to our website to connect with friends, share moments, and
               explore a world of possibilities together.
             </p>
-            <form className="space-y-4 md:space-y-6" action="#">
+            <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
               <div>
                 <input
                   type="fname"
                   name="fname"
                   id="fname"
+                  onChange={(e) => setFirstName(e.target.value)}
                   className="bg-black border focus:outline-none tracking-tighter border-white h-10 text-md text-white rounded-lg block w-full p-2.5"
                   placeholder="FIRST NAME*"
                   required
@@ -34,6 +58,7 @@ const LoginDetails = () => {
                   type="lname"
                   name="lname"
                   id="lname"
+                  onChange={(e) => setLastName(e.target.value)}
                   className="bg-black border tracking-tighter focus:outline-none border-white h-10 text-md text-white rounded-lg  block w-full p-2.5 "
                   placeholder="LAST NAME*"
                   required
@@ -44,6 +69,7 @@ const LoginDetails = () => {
                   type="email"
                   name="email"
                   id="email"
+                  onChange={(e) => setEmail(e.target.value)}
                   className="bg-black border tracking-tighter focus:outline-none border-gray-300 h-10 text-md text-white rounded-lg  block w-full p-2.5 "
                   placeholder="EMAIL*"
                   required
@@ -55,6 +81,7 @@ const LoginDetails = () => {
                   name="password"
                   id="password"
                   placeholder="PASSWORD*"
+                  onChange={(e) => setPassword(e.target.value)}
                   className="bg-black border tracking-tighter focus:outline-none border-gray-300 h-10 text-md text-white rounded-lg  block w-full p-2.5 "
                   required
                 />
@@ -64,6 +91,7 @@ const LoginDetails = () => {
                   type="birthday"
                   name="birthday"
                   id="birthday"
+                  onChange={(e) => setBirthday(e.target.value)}
                   className="bg-black border tracking-tighter focus:outline-none text-md border-gray-300 h-10 text-white rounded-lg  block w-full p-2.5 "
                   placeholder="BIRTHDAY"
                 />
@@ -84,4 +112,4 @@ const LoginDetails = () => {
   );
 };
 
-export default LoginDetails;
+export default Login;

@@ -39,9 +39,6 @@ const ShopAddOns = () => {
           </a>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 absolute right-0">
-          {/* {addOnsData.map((addOn) => (
-            <AddOnsPriceCard key={addOn.id} {...addOn} />
-          ))} */}
           {data &&
             data.map((addon) => <AddOnsPriceCard key={addon._id} {...addon} />)}
         </div>
