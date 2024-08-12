@@ -9,7 +9,11 @@ function DrinkCard() {
     <div className="w-[300px] h-[420px] bg-white rounded-lg shadow border-2 border-black group perspective">
       <div className="relative w-full h-full duration-1000 preserve-3d group-hover:my-rotate-y-180 ">
         <div className="absolute w-full h-full text-center backface-hidden">
-          <img className="rounded-lg" src="/drinks-card.png" alt="drink-img" />
+          <img
+            className="rounded-lg cursor-pointer"
+            src="/drinks-card.png"
+            alt="drink-img"
+          />
           <span className="text-2xl font-semibold text-gray-90">Drinks</span>
         </div>
         <div className="absolute my-rotate-y-180 w-full h-full bg-gray-100 rounded-lg backface-hidden">

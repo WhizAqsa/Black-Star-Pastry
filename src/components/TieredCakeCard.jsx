@@ -2,14 +2,14 @@ import { useNavigate } from "react-router-dom";
 function TieredCakeCard() {
   const navigate = useNavigate();
   const goToTieredCakes = () => {
-    navigate("/tieredcake");
+    navigate("/tieredcakes");
   };
   return (
     <div className="w-[300px] h-[420px] bg-white rounded-lg shadow border-2 border-black group perspective">
       <div className="relative w-full h-full duration-1000 preserve-3d group-hover:my-rotate-y-180 ">
         <div className="absolute w-full h-full text-center backface-hidden">
           <img
-            className="rounded-lg"
+            className="rounded-lg cursor-pointer"
             src="/tieredcake-card.png"
             alt="tieredcake-img"
           />

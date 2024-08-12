@@ -1,6 +1,5 @@
 import CakeCard from "./CakeCard";
 import { useState, useRef } from "react";
-import { FaChevronLeft, FaChevronRight, FaStar } from "react-icons/fa6";
 import PastryCard from "./PastryCard";
 import TieredCakeCard from "./TieredCakeCard";
 import DrinkCard from "./DrinkCard";

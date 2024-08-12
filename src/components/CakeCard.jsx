@@ -8,7 +8,7 @@ function Card() {
     <div className="w-[300px] h-[420px] bg-white rounded-lg shadow border-2 border-black group perspective">
       <div className="relative w-full h-full duration-1000 preserve-3d group-hover:my-rotate-y-180 ">
         <div className="absolute w-full h-full text-center backface-hidden">
-          <img className="rounded-lg" src="/cake.png" alt="cake-img" />
+          <img className="rounded-lg cursor-pointer" src="/cake.png" alt="cake-img" />
           <span className="text-2xl font-semibold text-gray-90">CAKES</span>
         </div>
         <div className="absolute my-rotate-y-180 w-full h-full bg-gray-100 rounded-lg backface-hidden">
