@@ -1,7 +1,9 @@
 import CakePriceCard from "./CakePriceCard";
 import Axios from "axios";
 import { useEffect, useState } from "react";
-import Cart_PopUpModal from "./Cart_PopUpModal";
+
+// @ts-ignore
+import CartPopUpModal from "./CartPopUpModal";
 
 const ShopCake = () => {
   const [cakes, setCakes] = useState([]);
@@ -57,15 +59,23 @@ const ShopCake = () => {
                 onClick={() => {
                   setShowModal(true);
                   setSelectedProduct(shopcake);
+
+                  // make body unscrollable
+                  document.body.style.overflow = "hidden";
                 }}
               />
             ))}
           </div>
         </div>
       </div>
-      <Cart_PopUpModal
+      <CartPopUpModal
         isVisible={showModal}
-        onClose={() => setShowModal(false)}
+        onClose={() => {
+          // make body scrollable
+          document.body.style.overflow = "auto";
+
+          setShowModal(false);
+        }}
         product={selectedProduct}
       />
     </>
