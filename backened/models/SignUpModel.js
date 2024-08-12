@@ -2,23 +2,23 @@ const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 
-const sweetPastrySchema = new Schema({
-  id: {
-    type: Number,
-    required: true,
-  },
-  image: { type: String, required: true },
-  title: {
+const SignUpSchema = new Schema({
+  firstname: {
     type: String,
     required: true,
   },
-  description: {
+  lastname: {
     type: String,
     required: true,
   },
-  price: {
+  password: { type: String, required: true },
+  email: {
+    type: String,
+    required: true,
+  },
+  birthday: {
     type: String,
     required: true,
   },
 });
-module.exports = mongoose.model("SweetPastry", sweetPastrySchema);
+module.exports = mongoose.model("SignUp", SignUpSchema);
