@@ -3,22 +3,19 @@ import Home from "./pages/Home";
 import Cakes from "./pages/Cakes";
 import Pastry from "./pages/Pastry";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CakeMenu from "./components/CakeMenu";
+import DisplayCakes from "./pages/DisplayCakes";
 import TieredCakes from "./pages/TieredCakes";
 import Drinks from "./pages/Drinks";
 import SavouryPastry from "./pages/SavouryPastry";
 import SweetPastry from "./pages/SweetPastry";
 import AddOns from "./pages/AddOns";
 import CartDetails from "./pages/CartDetails";
-import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
+
 function App() {
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<Main />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/home" element={<Home />} />
         <Route exact path="/cakes" element={<Cakes />} />
         <Route exact path="/pastry" element={<Pastry />} />
@@ -28,7 +25,7 @@ function App() {
         <Route exact path="/cart-details" element={<CartDetails />} />
         <Route exact path="/drinks" element={<Drinks />} />
         <Route exact path="/addons" element={<AddOns />} />
-        <Route exact path="/displaycakes" element={<CakeMenu />} />
+        <Route exact path="/displaycakes" element={<DisplayCakes />} />
       </Routes>
     </Router>
   );

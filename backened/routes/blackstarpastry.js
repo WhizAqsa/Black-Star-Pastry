@@ -23,14 +23,14 @@ const {
   getShopCakes,
   createShopCake,
 } = require("../controllers/shopCakeController");
-const {
-  sendLoginDetails,
-  getLoginDetails,
-} = require("../controllers/loginDetailsController");
-const {
-  sendSignUpDetails,
-  getSignUpDetails,
-} = require("../controllers/SignUpController");
+// const {
+//   sendLoginDetails,
+//   getLoginDetails,
+// } = require("../controllers/loginDetailsController");
+// const {
+//   sendSignUpDetails,
+//   getSignUpDetails,
+// } = require("../controllers/SignUpController");
 const router = express.Router();
 
 //creates a cake
@@ -74,8 +74,8 @@ router.post("/addon", createAddOn);
 router.get("/addon", getAddOns);
 
 //for login
-router.post("/login", sendLoginDetails);
+//router.post("/login", sendLoginDetails);
 //for sending and receiving user  details
-router.post("/signup", sendSignUpDetails);
-router.get("/signup", getSignUpDetails);
+//router.post("/signup", sendSignUpDetails);
+//router.get("/signup", getSignUpDetails);
 module.exports = router;

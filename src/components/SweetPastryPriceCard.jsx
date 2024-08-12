@@ -1,12 +1,12 @@
-const PastryPriceCard = ({ image, title, price, description }) => {
+const PastryPriceCard = ({ image, title, price, description, onClick }) => {
   return (
     <div className=" bg-white border shadow-md rounded-md shadow-slate-100">
       <img
-        className=" bg-slate-200 w-full h-full object-contain"
+        className=" bg-slate-200 w-full object-contain"
         src={image}
         alt={title}
       />
-      <div className=" py-4 cursor-pointer">
+      <div className=" py-4 cursor-pointer" onClick={onClick}>
         <h5 class="mb-2 text-2xl text-gray-900 tracking-tighter px-4">
           {title}
         </h5>

@@ -49,7 +49,7 @@ const ShopCake = () => {
           <div
             className="flex-1 grid gap-4"
             style={{
-              gridTemplateColumns: `repeat(auto-fit, minmax(18rem, 1fr))`,
+              gridTemplateColumns: `repeat(auto-fit, minmax(15rem, 1fr))`,
             }}
           >
             {cakes.map((shopcake) => (

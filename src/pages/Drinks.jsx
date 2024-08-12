@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Navbar from "./Navbar";
+import Navbar from "../components/Navbar";
 import Axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Grid from "./Grid";
-import ProductDisplay from "./ProductDisplay";
-import DisplaySelectionList from "./DisplaySelectionList";
+import Grid from "../components/Grid";
+import ProductDisplay from "../components/ProductDisplay";
+import DisplaySelectionList from "../components/DisplaySelectionList";
 
 const Drinks = () => {
   const navigate = useNavigate();

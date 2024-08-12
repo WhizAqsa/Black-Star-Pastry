@@ -97,20 +97,4 @@ function CircularCardLayout() {
   );
 }
 
-function CardsScrollNavigation({ onRotate }) {
-  return (
-    <div className="flex flex-row">
-      <button onClick={() => onRotate("right")}>
-        <FaChevronLeft className="text-3xl" />
-      </button>
-      <a>
-        <FaStar className="text-3xl" />
-      </a>
-      <button onClick={() => onRotate("left")}>
-        <FaChevronRight className="text-3xl" />
-      </button>
-    </div>
-  );
-}
-
 export default CircularCardLayout;
