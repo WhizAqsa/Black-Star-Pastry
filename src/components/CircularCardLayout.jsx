@@ -32,11 +32,6 @@ function CircularCardLayout() {
       transform: `rotate(${angle + 90}deg)`,
     };
   };
-  const handleRotate = (direction) => {
-    setRotationAngle(
-      (prevAngle) => prevAngle + (direction === "left" ? -30 : 30)
-    );
-  };
 
   const handleScroll = (event) => {
     const { deltaY } = event;
