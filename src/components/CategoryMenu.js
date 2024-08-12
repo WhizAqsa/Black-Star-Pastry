@@ -10,13 +10,18 @@ const CategoryMenu = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div
+        className="grid gap-4"
+        style={{
+          gridTemplateColumns: "repeat(auto-fit, minmax(20rem, 1fr))",
+        }}
+      >
         {categoryData.map((category) => (
           <Category key={category.id} {...category} />
         ))}
       </div>
     </div>
   );
-};
+}; //mtlb kr b dya?
 
 export default CategoryMenu;
